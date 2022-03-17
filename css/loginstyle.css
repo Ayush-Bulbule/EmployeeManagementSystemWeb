@@ -1,0 +1,68 @@
+.login-box{
+    background-color: white;
+    border-radius: 15px;
+    margin-right: 2rem;
+    margin-top: 4rem;
+}
+.login-btn{
+    background-color: #524d7d;
+    border-color: #524d7d;
+    color:white;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.login-btn:hover{
+    color: white;
+}
+.link-fp{
+    color: black;
+    text-decoration: none;
+
+}
+.link-fp:hover{
+    color: black;
+}
+
+
+/* 
+ */
+
+ /* //hide nasty ie clear thingie */
+.input-group.with-icon>input::-ms-clear{display:none}
+
+/* //general placement stuffs */
+.input-group.with-icon>i {
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  pointer-events: none;
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+}
+/* //icon right (default) */
+.input-group.with-icon>i,
+.input-group.with-icon.icon-right>i{
+right: .7rem;
+}
+.input-group.with-icon>input,
+.input-group.with-icon.icon-right>input {
+padding-right: 1.7rem;
+}
+
+/* //icon left */
+.input-group.with-icon.icon-left>i {
+left: .7rem;
+}
+.input-group.with-icon.icon-left>input{
+padding-left: 1.7rem;
+}
+
+/* //shy icon, hides on click of input box */
+.input-group.with-icon.icon-shy>i {
+  z-index: 1;
+}
+
+.h-100vh{
+    height: 100vh;
+}

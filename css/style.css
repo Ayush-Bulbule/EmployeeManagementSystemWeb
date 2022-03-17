@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+a{
+    text-decoration: none;
+    color: #fff;
+}
+a:hover{
+    color: #fff;
+}
+.logo-title{
+    margin: 0;
+    margin-left: 8px;
+    color: #000;
+}
+.logo-title:hover{
+    color: #000;
+}
+
+.logo-img{
+        max-width: 180px;
+        display: block;
+        height: 57px;
+        border-radius: 5px;
+}
+.navbar {
+    overflow: hidden;
+    background-color: #333;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+  }
+
+
+
+.color{
+    --blue: #524d7d;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #fff;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #524d7d;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+    .logo-title {
+      font-size: 0.9em;
+      margin-left: 4px;
+    }
+    #menu-btn{
+        font-size: 0.9em !important;
+    }
+    .nav-profile{
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+    
+  }
