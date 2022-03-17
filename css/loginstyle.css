@@ -5,8 +5,8 @@
     margin-top: 4rem;
 }
 .login-btn{
-    background-color: #524d7d;
-    border-color: #524d7d;
+    background-color: #104382;
+    border-color: #00316d;
     color:white;
     font-weight: 500;
     font-size: 1.2rem;
@@ -65,4 +65,17 @@ padding-left: 1.7rem;
 
 .h-100vh{
     height: 100vh;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 480px) {
+    .login-box{
+        background-color: white;
+        border-radius: 15px;
+        margin-right: 0rem !important;
+        margin-top: 2rem;
+    }
+    
 }
