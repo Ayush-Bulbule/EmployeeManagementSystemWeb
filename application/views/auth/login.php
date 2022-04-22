@@ -21,6 +21,16 @@
                         Weclome to EMS
                     </h3>
 
+                    <?php
+                    if ($this->session->flashdata('message')) {
+                        echo '
+                    <div class="alert alert-danger">
+                        ' . $this->session->flashdata("message") . '
+                    </div>
+                    ';
+                    }
+                    ?>
+
                     <!-- Form -->
                     <form action="<?php echo base_url('login') ?>" method="POST">
                         <div class="mb-3">

@@ -56,3 +56,11 @@ $route['translate_uri_dashes'] = FALSE;
 // Module A: Login and Register
 $route['login']['GET'] = 'Auth/RegisterController/index';
 $route['login']['POST'] = 'Auth/RegisterController/login';
+// Dashboard
+$route['home']['GET'] = 'Home/HomeController/index';
+$route['apply_leave']['GET'] = 'Leave/LeaveController/index';
+
+//leave
+$route['apply_leave']['POST'] = 'Leave/LeaveController/apply_leave';
+$route['leave_history']['GET'] = 'Leave/LeaveController/leave_history';
+$route['leave_types']['GET'] = 'Leave/LeaveController/leave_types';

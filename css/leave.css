@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+:root {
+    --main-color: #7952b3;
+}
+
+body {
+    background-color: #EBEEF3;
+    font-family: 'Poppins', sans-serif;
+    overflow-y: hidden;
+}
+
+/* Overriding default bootstrap */
+
+.form-control {
+    box-shadow: none !important;
+}
+
+.form-control:focus {
+    border-color: lightgray !important;
+}
+
+.btn:focus {
+    box-shadow: none !important;
+}
+
+.breadcrumb .breadcrumb-item a {
+    text-decoration: none;
+    color: #6c757d;
+}
+
+.breadcrumb .breadcrumb-item a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb-item+.breadcrumb-item::before {
+    content: ">";
+}
+
+.table td {
+    padding: 0.6rem 1rem;
+    vertical-align: middle;
+}
+
+.table th {
+    padding: 0.6rem 1rem;
+}
+
+/* Main CSS */
+
+.col-left {
+    flex: 0 0 auto;
+    width: 250px;
+}
+
+.fluid-container {
+    padding: 40px 30px;
+    height: 100vh;
+    overflow: auto;
+}
+
+.leave-page .card {
+    width: 100%;
+    margin-bottom: 1.5rem;
+    box-shadow: 0px 0px 35px 0px rgba(154, 161, 171, 0.15);
+    border: none;
+    border-radius: 10px;
+}
+
+.leave-page .card .card-title {
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.leave-page .card .card-body {
+    padding: 1.2rem 1.2rem 0.2rem 1.2rem;
+}
+
+.leave-page .card-2 .card-body {
+    padding: 0;
+    /* overflow-x: auto; */
+}
+
+.leave-page .card-2 .card-title {
+    margin: 1.2rem 0 1.8rem 1.2rem;
+    color: var(--main-color);
+}
+
+.leave-page .card-2 .dataTables_length {
+    padding: 0 20px;
+    width: max-content;
+    float: left;
+    margin-bottom: 20px;
+}
+
+.leave-page .card-2 .dataTables_length select {
+    margin: 0 5px;
+    padding: 6px;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px solid lightgrey;
+}
+
+.leave-page .card-2 .dataTables_filter {
+    padding: 0 20px;
+    width: max-content;
+    float: right;
+    margin-bottom: 20px;
+}
+
+.leave-page .card-2 .dataTables_filter label {
+    display: flex;
+    align-items: center;
+}
+
+.leave-page .card-2 .dataTables_filter input {
+    display: block;
+    width: 220px;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    outline: none;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-right-color: rgb(206, 212, 218);
+    border-right-style: solid;
+    border-right-width: 1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border-radius: .25rem;
+    border-top-right-radius: 0.25rem;
+    transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.leave-page .card-2 .dataTables_info {
+    padding: 20px 10px 20px 20px;
+    margin-bottom: 10px;
+    float: left;
+}
+
+.leave-page .card-2 .dataTables_paginate {
+    margin-top: 25px;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
+.leave-page .card-2 .dataTables_paginate .paginate_button {
+    text-decoration: none;
+    cursor: pointer;
+    color: var(--main-color);
+    padding: 5px 15px;
+    border: 1px solid gray;
+}
+
+
+.leave-page .card-2 .dataTables_paginate .previous {
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border: 1px solid gray;
+    border-right: none;
+    color: var(--main-color);
+}
+
+.leave-page .card-2 .dataTables_paginate .current {
+    color: white;
+    background-color: var(--main-color);
+    border: 1px solid var(--main-color);
+}
+
+.leave-page .card-2 .dataTables_paginate .next {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid gray;
+    border-left: none;
+    color: var(--main-color);
+}
+
+.leave-page .card-2 .dataTables_paginate .disabled {
+    color: black;
+}
+
+.leave-page .card-2 .card-body .table .profile {
+    display: flex;
+    align-items: center;
+}
+
+.leave-page .card-2 .card-body .table .profile .profile-img {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.leave-page .approved {
+    color: green !important;
+}
+
+.leave-page .rejected {
+    color: red !important;
+}
+
+@media(max-width: 650px) {
+    .fluid-container {
+        padding: 40px 30px;
+    }
+
+    .leave-page .card-2 .dataTables_filter {
+        float: left;
+    }
+
+    .leave-page .card-2 .dataTables_info {
+        float: none;
+        padding: 10px 0;
+    }
+
+    .leave-page .card-2 .dataTables_paginate {
+        margin: 0;
+        margin-bottom: 20px;
+    }
+}
