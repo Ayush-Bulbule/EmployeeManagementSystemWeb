@@ -16,7 +16,7 @@ We call Employee Management System as EMS</p>
 
 ![Home Page](login_ui.jpg "Home Page")
 
-![](/screenshots/2.png)
+![Leave Types](leavetypes_ui.jpg "Leave Type")
 
 ![](/screenshots/3.png)
 
