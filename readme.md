@@ -14,7 +14,7 @@ We call Employee Management System as EMS</p>
 
 ## Screenshots 💻
 
-![Home Page](/screenshots/1.png "Home Page")
+![Home Page](login_ui.png "Home Page")
 
 ![](/screenshots/2.png)
 
