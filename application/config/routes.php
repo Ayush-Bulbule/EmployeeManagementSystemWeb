@@ -58,6 +58,9 @@ $route['login']['GET'] = 'Auth/RegisterController/index';
 $route['login']['POST'] = 'Auth/RegisterController/login';
 // Dashboard
 $route['home']['GET'] = 'Home/HomeController/index';
+$route['apply_io_application']['GET'] = 'Home/HomeController/apply_io_application';
+
+
 $route['apply_leave']['GET'] = 'Leave/LeaveController/index';
 
 //leave
