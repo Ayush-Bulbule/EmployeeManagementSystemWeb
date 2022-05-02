@@ -23,13 +23,13 @@ We call Employee Management System as EMS</p>
 ###  Working with Project - EMS
 
  #### Steps to Download and work with Project:
- **Step 1:**  Clone the project using the `Code` Button at top right corner. You can download the project as a zip file also.
- **Step 2:** Unzip the zipped file and paste the project folder into `C:/xampp/htdocs` and you can rename the root folder as **ems-app**
- **Step 3:** Project has three main folders to work on : `model`,`view`and `controller`
- **Step 4: **  Create seperate modules i.e. folder for your module
+ - **Step 1:**  Clone the project using the `Code` Button at top right corner. You can download the project as a zip file also.
+ - **Step 2:** Unzip the zipped file and paste the project folder into `C:/xampp/htdocs` and you can rename the root folder as **ems-app**
+ - **Step 3:** Project has three main folders to work on : `model`,`view`and `controller`
+ - **Step 4: **  Create seperate modules i.e. folder for your module
 		 For E.g. : ![](/screenshots/folder.png)
-**Step 5:**  Now create files as per your module's need in the respective folders.
-**Step 6:** Test your features and then push to the GitHub repo.
+- **Step 5:**  Now create files as per your module's need in the respective folders.
+- **Step 6:** Test your features and then push to the GitHub repo.
 
 
 #### Running the App:
