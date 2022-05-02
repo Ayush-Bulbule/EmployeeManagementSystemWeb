@@ -17,13 +17,10 @@
                 </li>
             </ul>
         </li>
-        <li class="nav-item py-2">
-            <a href="<?php echo base_url() . 'apply_io_application' ?>" class=" px-0 align-middle">
-                <span class="ms-1 d-none d-sm-inline">Apply Io Application</span></a>
-        </li>
+
         <li class="nav-item py-2">
             <a href="<?php echo base_url() . 'applied_io_application' ?>" class=" px-0 align-middle">
-                <span class="ms-1 d-none d-sm-inline">Show Applied Applications</span></a>
+                <span class="ms-1 d-none d-sm-inline">IO Applications</span></a>
         </li>
         <li class="nav-item py-2">
             <a href="#submenu2" data-bs-toggle="collapse" class=" px-0 align-middle ">
