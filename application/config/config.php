@@ -24,7 +24,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 |
 */
 
-$config['base_url'] = 'http://localhost/projects/weh_ems/EmployeeManagementSystemWeb/';
+$config['base_url'] = 'http://localhost/ems-io-app/';
 // $config['base_url'] = 'http://localhost/projects/weh_ems/EmployeeManagementSystemWeb/';
 
 /*

@@ -8,6 +8,8 @@ class ApplyIOApplication extends CI_Controller
     {
         parent::__construct(); //important to call parent constructor
         $this->load->model('IO_model');
+        $this->load->library('form_validation');
+
     }
     public function add_io_application()
     {
