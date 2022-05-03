@@ -32,9 +32,12 @@ class ApplyIOApplication extends CI_Controller
             );
             $this->load->library('upload', $config);
 
-            if (!$this->upload->do_upload("io_application")) {
+            if (!$this->upload->do_upload("application")) {
                 $error = $this->upload->display_errors();
-
+                echo "no file selected";
+                echo "no file selected";
+                echo "no file selected";
+                echo "no file selected";
                 $this->session->set_flashdata('error', "Application PDF Not Selected");
                 $this->load_apply_io_application();
 
@@ -78,11 +81,13 @@ class ApplyIOApplication extends CI_Controller
 
     public function load_apply_io_application()
     {
+
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/employee/employee_sidebar.php');
         $this->load->view('dashboard/employee/apply_io_application.php');
         $this->load->view('templates/footer.php');
+
 
     }
 

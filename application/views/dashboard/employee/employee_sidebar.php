@@ -18,7 +18,8 @@
             </ul>
         </li>
         <li class="nav-item py-2">
-            <a href="<?php echo base_url() . 'apply_io_application' ?>" class=" px-0 align-middle">
+            <a href="<?php echo base_url() . 'Home/ApplyIoApplication/add_io_application' ?>"
+                class=" px-0 align-middle">
                 <span class="ms-1 d-none d-sm-inline">Apply Io Application</span></a>
         </li>
         <li class="nav-item py-2">
