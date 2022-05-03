@@ -28,11 +28,11 @@ class ApplyIOApplication extends CI_Controller
                 'allowed_types' => "pdf", //restrict extension
                 'max_size' => '300000',
                 'max_width' => '30000',
-                'max_height' => '30000',
+                'max_height' => '30000'
             );
             $this->load->library('upload', $config);
 
-            if (!$this->upload->do_upload("application")) {
+            if (!$this->upload->do_upload('application')) {
                 $error = $this->upload->display_errors();
                 echo "no file selected";
                 echo "no file selected";
@@ -70,7 +70,7 @@ class ApplyIOApplication extends CI_Controller
                     "application_type" => $application_type,
                 );
 
-                $this->Auth_model->save_io_details($io_application_data);
+                $this->IO_model->save_io_details($io_application_data);
                 $this->session->set_flashdata('success', "Application Submitted Successfully");
                 redirect(base_url() . 'home'); // redirect to home page
 

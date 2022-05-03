@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="<?php echo base_url('css/main.css');?>">
 </head>
 
 <body>
@@ -22,9 +22,7 @@
 
         <div class="container">
 
-            <h2>hello</h2>
-            <h2>hello</h2>
-            <h2>hello</h2>
+
             <?php
 
 if ($this->session->flashdata('msg')) {
@@ -41,12 +39,15 @@ if ($this->session->flashdata('msg')) {
 
             <div class="signup-content">
 
+            <?php 
+                $attributes= array('role' => 'form');
+                echo form_open_multipart('Form/actionUrl', $attributes);
+            ?>
 
                 <div class="signup-form">
                     <form method="POST" action="<?php echo base_url() . 'Home/ApplyIoApplication/add_io_application' ?>"
                         class="register-form" id="register-form">
 
-                        <h2>hello</h2>
                         <h2>Apply For Application</h2>
                         <div class="form-row">
                             <div class="form-group">
@@ -80,8 +81,9 @@ if ($this->session->flashdata('msg')) {
                             </div>
                             <div class="form-group">
                                 <label for="application">SELECT PDF</label>
+                                <?php echo form_open_multipart('upload/do_upload');?>
+
                                 <input type="file" name="application" id="application"
-                                    value="<?php echo set_value('application'); ?>"
                                     class="form-input form-control <?php echo (form_error('application') != "") ? 'is-invalid' : '' ?>"
                                     placeholder="">
                                 <p class="invalid-feedback "><?php echo strip_tags(form_error('application')); ?>

@@ -11,11 +11,11 @@ class IO_model extends CI_Model
     }
 
     public function save_io_details(
-       $data
+        $io_application_data
     ) {
         
 
-        $this->db->insert('applications', $data);
+        $this->db->insert('applications', $io_application_data);
 
     }
     public function get_hod_by_department_organization($department_id, $organization_id)
