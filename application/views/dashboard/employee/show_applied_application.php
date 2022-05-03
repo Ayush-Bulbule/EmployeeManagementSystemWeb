@@ -13,6 +13,7 @@
                 <thead>
                     <tr>
 
+                        <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
@@ -23,17 +24,19 @@
 
                 <tbody>
                     <tr>
-                        
-                        <?php if (!empty($applications)) {foreach ($employee_for_verification_from_hod as $employees) {?>
 
-                        <th scope="row"><?php echo $employees['name'] ?></th>
-                        <td><?php echo $employees['date'] ?></td>
-                        <td><?php echo $employees['status'] ?></td>
-                        <td><?php echo $employees['remark'] ?></td>
+                        <?php if (!empty($applications)) {foreach ($applications as $application) {?>
 
-                       
+                    <tr>
+                        <th scope="row"><?php echo $application['id'] ?></th>
+                        <th scope="row"><?php echo $application['title'] ?></th>
+                        <td><?php echo $application['date'] ?></td>
+                        <td><?php echo $application['status_id'] ?></td>
+                        <td><?php echo $application['remark'] ?></td>
+                    </tr>
 
-                        <?php }} ?>
+
+                    <?php }} ?>
 
                     </tr>
 

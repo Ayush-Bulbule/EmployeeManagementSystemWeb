@@ -25,7 +25,7 @@ class ApplyIOApplication extends CI_Controller
 
             $config = array(
                 'upload_path' => "uploads/io_applications", //path for upload
-                'allowed_types' => "pdf", //restrict extension
+                'allowed_types' => "*", //restrict extension
                 'max_size' => '300000',
                 'max_width' => '30000',
                 'max_height' => '30000'
@@ -34,11 +34,7 @@ class ApplyIOApplication extends CI_Controller
 
             if (!$this->upload->do_upload('application')) {
                 $error = $this->upload->display_errors();
-                echo "no file selected";
-                echo "no file selected";
-                echo "no file selected";
-                echo "no file selected";
-                $this->session->set_flashdata('error', "Application PDF Not Selected");
+                $this->session->set_flashdata('error', $error);
                 $this->load_apply_io_application();
 
             } else {
@@ -50,6 +46,7 @@ class ApplyIOApplication extends CI_Controller
                 $hod_id = $this->IO_model->get_hod_by_department_organization($curr_user->dept_id, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($curr_user->dept_id, $curr_user->org_id);
                 $registrar_id = $this->IO_model->get_registrar_by_organization($curr_user->dept_id, $curr_user->org_id);
+
 
                 $title = $this->input->post('title');
                 $description = $this->input->post('description');

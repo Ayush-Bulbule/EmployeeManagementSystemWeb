@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="fonts/material-icon/css/material-design-iconic-font.min.css">
 
     <!-- Main css -->
-    <link rel="stylesheet" href="<?php echo base_url('css/main.css');?>">
+    <link rel="stylesheet" href="<?php echo base_url('css/main.css'); ?>">
 </head>
 
 <body>
@@ -39,14 +39,14 @@ if ($this->session->flashdata('msg')) {
 
             <div class="signup-content">
 
-            <?php 
-                $attributes= array('role' => 'form');
-                echo form_open_multipart('Form/actionUrl', $attributes);
-            ?>
+                <?php
+                    $attributes = array('role' => 'form');
+                    echo form_open_multipart('Home/ApplyIoApplication/add_io_application');
+                                    
+                ?>
 
                 <div class="signup-form">
-                    <form method="POST" action="<?php echo base_url() . 'Home/ApplyIoApplication/add_io_application' ?>"
-                        class="register-form" id="register-form">
+                    <form method="POST" class="register-form" id="register-form">
 
                         <h2>Apply For Application</h2>
                         <div class="form-row">
@@ -68,7 +68,6 @@ if ($this->session->flashdata('msg')) {
                             <p class="invalid-feedback "><?php echo strip_tags(form_error('description')); ?></p>
 
                         </div>
-
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="org_id">Date</label>
@@ -79,9 +78,10 @@ if ($this->session->flashdata('msg')) {
 
 
                             </div>
+                            <!-- File Uploading -->
                             <div class="form-group">
                                 <label for="application">SELECT PDF</label>
-                                <?php echo form_open_multipart('upload/do_upload');?>
+                                <?php echo form_open_multipart('Home/ApplyIoApplication/add_io_application'); ?>
 
                                 <input type="file" name="application" id="application"
                                     class="form-input form-control <?php echo (form_error('application') != "") ? 'is-invalid' : '' ?>"

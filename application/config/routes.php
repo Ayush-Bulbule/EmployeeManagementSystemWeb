@@ -61,6 +61,8 @@ $route['home']['GET'] = 'Home/HomeController/index';
 $route['apply_io_application']['GET'] = 'Home/HomeController/apply_io_application';
 $route['applied_io_application']['GET'] = 'Home/ApplyIoApplication/show_applied_io_applications';
 $route['hod']['GET'] = 'Hod/HodController/index';
+$route['principle']['GET'] = 'Principle/PrincipleController/index';
+$route['registrar']['GET'] = 'Registrar/RegistrarController/index';
 
 
 $route['apply_leave']['GET'] = 'Leave/LeaveController/index';

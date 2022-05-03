@@ -12,8 +12,8 @@ class PrincipleController extends CI_Controller
     {
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
-        $this->load->view('dashboard/hod/hod_sidebar.php');
-        $this->load->view('dashboard/hod/hod_dashboard.php');
+        $this->load->view('dashboard/principle/principle_sidebar.php');
+        $this->load->view('dashboard/principle/principle_dashboard.php');
         $this->load->view('templates/footer.php');
     }
 

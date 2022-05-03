@@ -7,6 +7,9 @@ class IO_model extends CI_Model
     }
     
     public function get_employee_by_sevarth_id($sevarth_id){
+        if($sevarth_id == null){
+            echo "sevarth_id is null at io_model line 11";
+        }
         return $this->db->where('sevarth_id', $sevarth_id)->get('employees')->result()[0];
     }
 
@@ -14,7 +17,6 @@ class IO_model extends CI_Model
         $io_application_data
     ) {
         
-
         $this->db->insert('applications', $io_application_data);
 
     }
@@ -44,6 +46,8 @@ class IO_model extends CI_Model
             'org_id' => $organization_id,
             'role_id' => 3, // role id of principal
         );
+
+        
 
         if ($this->db->where($condition)->get('employees')->num_rows() > 0) {
             $principal_id = (array) $this->db->where($condition)->get('employees')->result()[0];
@@ -77,17 +81,31 @@ class IO_model extends CI_Model
         if ($role_id == 1) {
             return $this->db->where('sevarth_id', $sevarthId)->order_by("id", "DESC")->get('applications')->result_array();
         }
-        // for hod
+        // for hod 
         else if ($role_id == 2) {
-            return $this->db->where('hod_id', $sevarthId)->order_by("id", "DESC")->get('applications')->result_array();
+            $condition = array(
+                'hod_id' => $sevarthId,
+                'status_id' => 1, //show application which are applied by hod 
+            );
+            return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
         }
         // for principle
         else if ($role_id == 3) {
-            return $this->db->where('principal_id', $sevarthId)->order_by("id", "DESC")->get('applications')->result_array();
+            $condition = array(
+                'principal_id' => $sevarthId,
+                'status_id' => 2, //show application which are applied by hod
+            );
+
+            return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
         }
         // for registrar
         else if ($role_id == 4) {
-            return $this->db->where('registrar_id', $sevarthId)->order_by("id", "DESC")->get('applications')->result_array();
+            $condition = array(
+                'registrar_id' => $sevarthId,
+                'status_id' => 4, //show application which are applied by hod
+            );
+
+            return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
         }
 
     }
