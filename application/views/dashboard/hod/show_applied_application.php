@@ -91,7 +91,7 @@ if ($this->session->flashdata('msg')) {
                                 echo 'OUTWARD';
                             }
                             ?>
-                            </td>
+                        </td>
                         <td>
                             <a href="<?php echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id'].  "/dummy remark" ?>"
                                 style="font-size: 12px; border-radius: 5px" class="btn btn-primary"> Accept
