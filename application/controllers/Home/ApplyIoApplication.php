@@ -47,7 +47,6 @@ class ApplyIOApplication extends CI_Controller
                 $principal_id = $this->IO_model->get_principal_by_organization($curr_user->dept_id, $curr_user->org_id);
                 $registrar_id = $this->IO_model->get_registrar_by_organization($curr_user->dept_id, $curr_user->org_id);
 
-
                 $title = $this->input->post('title');
                 $description = $this->input->post('description');
                 $application_type = $this->input->post('application_type');
@@ -79,10 +78,12 @@ class ApplyIOApplication extends CI_Controller
     public function load_apply_io_application()
     {
 
+        $dept = $this->IO_model->getDepartment();
+
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/employee/employee_sidebar.php');
-        $this->load->view('dashboard/employee/apply_io_application.php');
+        $this->load->view('dashboard/employee/apply_io_application.php', array('dept' => $dept));
         $this->load->view('templates/footer.php');
 
 

@@ -39,6 +39,13 @@ class IO_model extends CI_Model
 
     }
 
+    public function getDepartment()
+    {
+        $query = "SELECT * FROM departments";
+        $dept = $this->db->query($query)->result_array();
+        return $dept;
+    }
+
     public function get_principal_by_organization($department_id, $organization_id)
     {
         $condition = array(

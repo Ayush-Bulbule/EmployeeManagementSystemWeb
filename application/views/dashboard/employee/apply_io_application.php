@@ -25,11 +25,11 @@
 
             <?php
 
-if ($this->session->flashdata('msg')) {
+if ($this->session->flashdata('error')) {
     echo '
         <div class="container">
             <div class="alert alert-danger">
-                ' . $this->session->flashdata("msg") . '
+                ' . $this->session->flashdata("error") . '
             </div>
         </div>
         ';
@@ -57,6 +57,22 @@ if ($this->session->flashdata('msg')) {
                                 <p class="invalid-feedback "><?php echo strip_tags(form_error('title')); ?></p>
 
                             </div>
+
+                            <div class="form-group">
+                        <label for="dept_id">Department</label>
+                        <select class="form-select" name="dept_id" id="dept_id">
+                            <?php if (!empty($dept)) {foreach ($dept as $departments) {?>
+
+                            <option value="<?php echo $departments['dept_id'] ?>">
+                                <?php echo $departments['dept_name'] ?></option>
+
+                            <?php }} else {?>
+                            <option value="">Select the Department</option>
+
+
+                            <?php }?>
+                        </select>
+                    </div>
 
                         </div>
                         <div class="form-group">
