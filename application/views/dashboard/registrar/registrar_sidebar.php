@@ -19,7 +19,8 @@
         </li>
 
         <li class="nav-item py-2">
-            <a href="<?php echo base_url() . 'applied_io_application' ?>" class=" px-0 align-middle">
+            <a href="<?php echo base_url() . 'Registrar/IoApplication/show_applied_io_applications'?>"
+                class=" px-0 align-middle">
                 <span class="ms-1 d-none d-sm-inline">IO Applications</span></a>
         </li>
         <li class="nav-item py-2">

@@ -100,7 +100,7 @@ class IO_model extends CI_Model
         else if ($role_id == 3) {
             $condition = array(
                 'principal_id' => $sevarthId,
-                'status_id' => 2, //show application which are applied by hod
+                'status_id' => 3, //show application which are approved by registrar
             );
 
             return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
@@ -109,7 +109,7 @@ class IO_model extends CI_Model
         else if ($role_id == 4) {
             $condition = array(
                 'registrar_id' => $sevarthId,
-                'status_id' => 4, //show application which are applied by hod
+                'status_id' => 2, //show application which are approved by employee
             );
 
             return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();

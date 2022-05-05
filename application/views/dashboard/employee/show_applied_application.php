@@ -18,6 +18,7 @@
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Remark</th>
+                        <th scope="col">Description</th>
                     </tr>
 
                 </thead>
@@ -33,6 +34,7 @@
                         <td><?php echo $application['date'] ?></td>
                         <td><?php echo $application['status_id'] ?></td>
                         <td><?php echo $application['remark'] ?></td>
+                        <td><?php echo $application['description'] ?></td>
                     </tr>
 
 

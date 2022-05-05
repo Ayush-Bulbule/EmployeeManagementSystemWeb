@@ -41,7 +41,7 @@ if ($this->session->flashdata('error')) {
 
                 <?php
                     $attributes = array('role' => 'form');
-                    echo form_open_multipart('Home/ApplyIoApplication/add_io_application');
+                    echo form_open_multipart('Auth/ApplyIoApplication/add_io_application');
                                     
                 ?>
 

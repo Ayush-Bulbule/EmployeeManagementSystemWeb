@@ -98,7 +98,6 @@ class ApplyIOApplication extends CI_Controller
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/employee/employee_sidebar.php');
         $this->load->view('dashboard/employee/show_applied_application.php', array('applications' => $applications));
-        $this->load->view('templates/footer.php');
 
     }
 
