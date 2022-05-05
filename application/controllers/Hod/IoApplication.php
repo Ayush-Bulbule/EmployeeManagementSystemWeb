@@ -37,6 +37,14 @@ class IoApplication extends CI_Controller
 
     }
 
+    public function add_remark()
+    {
+        $remark = $this->input->post('remark');
+        $application_id = $this->input->post('application_id');
+
+        $this->IO_model->add_curr_remark($remark,$application_id);
+    }
+
     public function show_applied_io_applications()
     {
         $sevarth_id = $this->session->userdata('sevarth_id');

@@ -40,12 +40,13 @@ if ($this->session->flashdata('msg')) {
                 </thead>
 
                 <tbody>
+                    <form action="<?php echo base_url() . 'Hod/IoApplication/add_remark' ?>" method="post">
                     <tr>
 
                         <?php if (!empty($applications)) {foreach ($applications as $application) {?>
 
                     <tr>
-                        <th scope="row"><?php echo $application['id'] ?></th>
+                        <th scope="row"><input type="text" name="application_id" id="application_id" disabled value="<?php echo $application['id'] ?>"></th>
                         <th scope="row"><?php echo $application['title'] ?></th>
 
                         <th scope="row">
@@ -92,12 +93,15 @@ if ($this->session->flashdata('msg')) {
                             ?>
                         </td>
                         <td>
-                            <a href="<?php echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id'].  "/null" ?>"
-                                style="font-size: 12px; border-radius: 5px" class="btn btn-primary"> Accept
+                            <a href="
+                            <?php 
+ echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id']
+                            ?>"
+                                style="font-size: 12px; border-radius: 5px"  class="btn btn-primary"> Accept
                             </a>
                         </td>
                         <td>
-                            <a href="<?php echo base_url() . 'Hod/IoApplication/decline_io_application/' . $application['id'] ."/null" ?>"
+                            <a href="<?php echo base_url() . 'Hod/IoApplication/decline_io_application/' . $application['id']  ?>"
                                 style="font-size: 12px;  border-radius: 5px"" class=" btn btn-danger">Decline</a>
                         </td>
                         <td><input type="text" name="remark" id="remark" class="form-input form-control "
@@ -108,7 +112,7 @@ if ($this->session->flashdata('msg')) {
                     <?php }} ?>
 
                     </tr>
-
+                    </form>
                 </tbody>
             </table>
         </div>

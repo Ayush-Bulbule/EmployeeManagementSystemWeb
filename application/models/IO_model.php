@@ -46,6 +46,12 @@ class IO_model extends CI_Model
         return $dept;
     }
 
+    public function add_curr_remark($remark, $application_id)
+    {
+        $this->db->insert('applications', $remark)->where('applicaiton_id', $application_id);
+
+    }
+
     public function get_principal_by_organization($department_id, $organization_id)
     {
         $condition = array(
