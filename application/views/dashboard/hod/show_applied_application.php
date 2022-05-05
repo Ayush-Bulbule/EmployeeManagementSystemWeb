@@ -4,7 +4,7 @@
 
     <div class="container py-4">
 
-    <?php
+        <?php
 
 if ($this->session->flashdata('msg')) {
     echo '
@@ -47,10 +47,9 @@ if ($this->session->flashdata('msg')) {
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
                         <th scope="row"><?php echo $application['title'] ?></th>
-                        
+
                         <th scope="row">
-                        <a href="#"
-                                style="font-size: 12px; border-radius: 5px" class="btn btn-success"> View
+                            <a href="#" style="font-size: 12px; border-radius: 5px" class="btn btn-success"> View
                             </a>
                         </th>
 
@@ -81,7 +80,7 @@ if ($this->session->flashdata('msg')) {
                             }
                             ?>
                         </td>
-                        
+
                         <td>
                             <?php 
                             if($application['application_type'] ==1 )
@@ -93,17 +92,16 @@ if ($this->session->flashdata('msg')) {
                             ?>
                         </td>
                         <td>
-                            <a href="<?php echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id'].  "/dummy remark" ?>"
+                            <a href="<?php echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id'].  "/null" ?>"
                                 style="font-size: 12px; border-radius: 5px" class="btn btn-primary"> Accept
                             </a>
                         </td>
                         <td>
-                            <a href="<?php echo base_url() . 'Hod/IoApplication/decline_io_application/' . $application['id'] ."/dummy remark" ?>"
+                            <a href="<?php echo base_url() . 'Hod/IoApplication/decline_io_application/' . $application['id'] ."/null" ?>"
                                 style="font-size: 12px;  border-radius: 5px"" class=" btn btn-danger">Decline</a>
                         </td>
-                        <td><input type="text" name="remark" id="remark"
-                                    class="form-input form-control "
-                                    placeholder=""></td>
+                        <td><input type="text" name="remark" id="remark" class="form-input form-control "
+                                placeholder=""></td>
                     </tr>
 
 
