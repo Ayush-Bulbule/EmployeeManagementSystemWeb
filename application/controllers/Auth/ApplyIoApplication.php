@@ -18,6 +18,7 @@ class ApplyIOApplication extends CI_Controller
         $this->form_validation->set_rules('description', 'Description', 'required');
         $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('remark', 'Remark', 'required');
 
         //if error in form validation reload apply io application screen again
         if ($this->form_validation->run() == false) {
@@ -97,7 +98,7 @@ class ApplyIOApplication extends CI_Controller
         $sevarth_id = $this->session->userdata('sevarth_id');
         $role_id = $this->session->userdata('role_id');
         $applications = $this->IO_model->getApplicationsById($sevarth_id, $role_id);
-        
+
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/employee/employee_sidebar.php');

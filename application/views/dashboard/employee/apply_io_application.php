@@ -110,12 +110,12 @@ if ($this->session->flashdata('error')) {
                         <div class="form-radio">
                             <label for="application_type" class="radio-label">Select Application Type :</label>
                             <div class="form-radio-item">
-                                <input type="radio" name="application_type" id="inward" checked>
+                                <input type="radio" name="application_type" value="1" id="inward" checked>
                                 <label for="inward">Inward</label>
                                 <span class="check"></span>
                             </div>
                             <div class="form-radio-item">
-                                <input type="radio" name="application_type" id="outward">
+                                <input type="radio" name="application_type" value="2" id="outward">
                                 <label for="outward">Outward</label>
                                 <span class="check"></span>
                             </div>

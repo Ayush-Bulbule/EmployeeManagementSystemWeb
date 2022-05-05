@@ -10,9 +10,16 @@ class IoApplication extends CI_Controller
     }
     
     public function accept_io_application($application_id, $remark){
-        //hod is accepting the application hence status is become 2
-        $this->IO_model->update_status_id($application_id, 2, $remark);
-        redirect('Hod/IoApplication/show_applied_io_applications');
+        if($remark==""){
+            $this->session->set_flashdata('msg', 'Add Remark!!');
+            redirect('Hod/IoApplication/show_applied_io_applications');
+
+        }else{
+     //hod is accepting the application hence status is become 2
+     $this->IO_model->update_status_id($application_id, 2, $remark);
+     redirect('Hod/IoApplication/show_applied_io_applications');
+        }
+   
     }
     
     public function decline_io_application($application_id, $remark){
