@@ -8,23 +8,32 @@ class IoApplication extends CI_Controller
         parent::__construct(); //important to call parent constructor
         $this->load->model('IO_model');
     }
+   
+
 
     public function accept_io_application($application_id, $remark)
+    
     {
+     
+        $remark = $this->input->post('remark');
+
         if ($remark == "null") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
             redirect('Hod/IoApplication/show_applied_io_applications');
 
         } else {
             //hod is accepting the application hence status is become 2
+            // echo $remark;
             $this->IO_model->update_status_id($application_id, 2, $remark);
             redirect('Hod/IoApplication/show_applied_io_applications');
         }
 
     }
 
-    public function decline_io_application($application_id, $remark)
+    public function decline_io_application($application_id)
     {
+        $remark = $this->input->post('remark');
+
         if ($remark == "null") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
             redirect('Hod/IoApplication/show_applied_io_applications');
@@ -37,13 +46,7 @@ class IoApplication extends CI_Controller
 
     }
 
-    public function add_remark()
-    {
-        $remark = $this->input->post('remark');
-        $application_id = $this->input->post('application_id');
-
-        $this->IO_model->add_curr_remark($remark,$application_id);
-    }
+   
 
     public function show_applied_io_applications()
     {
