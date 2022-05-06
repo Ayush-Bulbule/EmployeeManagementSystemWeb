@@ -30,10 +30,11 @@ if ($this->session->flashdata('msg')) {
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
+                        <th scope="col">Remark</th>
+
                         <th scope="col">Accept</th>
                         <th scope="col">Decline</th>
 
-                        <th scope="col">Remark</th>
 
                     </tr>
 
@@ -92,23 +93,27 @@ if ($this->session->flashdata('msg')) {
                             }
                             ?>
                         </td>
+                        <form action="" method="post">
+                        <td><input type="text" name="remark" id="remark" class="form-input form-control "
+                                placeholder="Add Remark Here">
+                            </td>
                         <td>
-                            <a href="
-                            <?php 
-                            echo base_url() . 'Hod/IoApplication/accept_io_application/' . $application['id'] 
-                            ?>"
-
-                                style="font-size: 12px; border-radius: 5px"  class="btn btn-primary"> Accept
-                            </a>
+                            
+                        <div class="form-submit">
+                            <input type="submit" class="btn btn-success" value="Accept" class="submit" name="submit" id="submit" />
+                        </div>
      
 
                         </td>
+                        
                         <td>
-                            <a href="<?php echo base_url() . 'Hod/IoApplication/decline_io_application/' . $application['id']  ?>"
-                                style="font-size: 12px;  border-radius: 5px"" class=" btn btn-danger">Decline</a>
-                        </td>
-                        <td><input type="text" name="remark" id="remark" class="form-input form-control "
-                                placeholder="Add Remark Here"></td>
+                        
+                        <div class="form-submit">
+                            <input type="submit" class="btn btn-danger" value="Decline" class="submit" name="submit" id="submit" />
+                        </div>
+                            </td>
+                       
+                            </form>
                     </tr>
 
 
