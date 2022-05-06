@@ -30,10 +30,10 @@ if ($this->session->flashdata('msg')) {
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
+                        <th scope="col">Remark</th>
                         <th scope="col">Accept</th>
                         <th scope="col">Decline</th>
 
-                        <th scope="col">Remark</th>
 
                     </tr>
 
@@ -43,9 +43,15 @@ if ($this->session->flashdata('msg')) {
                     <tr>
 
                         <?php if (!empty($applications)) {foreach ($applications as $application) {?>
-
+                            <?php
+                    $attributes = array('role' => 'form');
+                    echo form_open_multipart('Principle/IoApplication/ad_io_application/' . $application['id']);
+                    ?>
+                 
+                            <form action="" name="registerForm" id="registerForm signupform" class="signupform" method="post">
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
+                      
                         <th scope="row"><?php echo $application['title'] ?></th>
 
                         <th scope="row">
@@ -91,24 +97,30 @@ if ($this->session->flashdata('msg')) {
                             }
                             ?>
                         </td>
-                        <td>
-                            <a href="<?php echo base_url() . 'Principle/IoApplication/accept_io_application/' . $application['id'].  "/null" ?>"
-                                style="font-size: 12px; border-radius: 5px" class="btn btn-primary"> Accept
-                            </a>
-                        </td>
-                        <td>
-                            <a href="<?php echo base_url() . 'Principle/IoApplication/decline_io_application/' . $application['id'] ."/null" ?>"
-                                style="font-size: 12px;  border-radius: 5px"" class=" btn btn-danger">Decline</a>
-                        </td>
                         <td><input type="text" name="remark" id="remark" class="form-input form-control "
-                                placeholder=""></td>
+                                placeholder="Add Remark Here">
+                            </td>
+                        <td>
+                      
+                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary" value="Accept" />
+
+
+                        </td>
+
+                        <td>
+                      
+                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-danger" value="Decline" />
+
+
+                        </td>
+   
+                        </form>
                     </tr>
 
 
                     <?php }} ?>
 
                     </tr>
-
                 </tbody>
             </table>
         </div>
@@ -118,3 +130,5 @@ if ($this->session->flashdata('msg')) {
 
 
 </section>
+
+

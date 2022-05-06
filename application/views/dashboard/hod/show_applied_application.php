@@ -109,7 +109,7 @@ if ($this->session->flashdata('msg')) {
 
                         <td>
                       
-                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary" value="Decline" />
+                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-danger" value="Decline" />
 
 
                         </td>

@@ -9,10 +9,23 @@ class IoApplication extends CI_Controller
         $this->load->model('IO_model');
     }
 
-    public function accept_io_application($application_id, $remark){
-        if ($remark == "null") {
+    public function ad_io_application($application_id)
+    {
+        if($this->input->post('submit')=="Accept")
+        {
+            $this->accept_io_application($application_id);
+        }else{
+            $this->decline_io_application($application_id);
+
+        }
+    }
+
+    public function accept_io_application($application_id){
+        $remark = $this->input->post('remark');
+
+        if ($remark == "") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
-            redirect('Hod/IoApplication/show_applied_io_applications');
+            redirect('Registrar/IoApplication/show_applied_io_applications');
 
         }else{
             //Principle is accepting the application hence status is become 4
@@ -23,10 +36,12 @@ class IoApplication extends CI_Controller
     
     
     
-    public function decline_io_application($application_id, $remark){
-        if ($remark == "null") {
+    public function decline_io_application($application_id){
+        $remark = $this->input->post('remark');
+
+        if ($remark == "") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
-            redirect('Hod/IoApplication/show_applied_io_applications');
+            redirect('Registrar/IoApplication/show_applied_io_applications');
 
         }else{
         //Principle is accepting the application hence status is become 6
