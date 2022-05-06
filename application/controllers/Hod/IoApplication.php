@@ -11,13 +11,22 @@ class IoApplication extends CI_Controller
    
 
 
-    public function accept_io_application($application_id, $remark)
+    public function ad_io_application($application_id)
+    {
+        if($this->input->post('submit')=="Accept")
+        {
+            $this->accept_io_application($application_id);
+        }else{
+            $this->decline_io_application($application_id);
+
+        }
+    }
+    public function accept_io_application($application_id)
     
     {
      
         $remark = $this->input->post('remark');
-
-        if ($remark == "null") {
+        if ($remark == "") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
             redirect('Hod/IoApplication/show_applied_io_applications');
 
@@ -34,7 +43,7 @@ class IoApplication extends CI_Controller
     {
         $remark = $this->input->post('remark');
 
-        if ($remark == "null") {
+        if ($remark == "") {
             $this->session->set_flashdata('msg', 'Add Remark!!');
             redirect('Hod/IoApplication/show_applied_io_applications');
 

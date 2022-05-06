@@ -31,7 +31,6 @@ if ($this->session->flashdata('msg')) {
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
                         <th scope="col">Remark</th>
-
                         <th scope="col">Accept</th>
                         <th scope="col">Decline</th>
 
@@ -44,7 +43,12 @@ if ($this->session->flashdata('msg')) {
                     <tr>
 
                         <?php if (!empty($applications)) {foreach ($applications as $application) {?>
-
+                            <?php
+                    $attributes = array('role' => 'form');
+                    echo form_open_multipart('Hod/IoApplication/ad_io_application/' . $application['id']);
+                    ?>
+                 
+                            <form action="" name="registerForm" id="registerForm signupform" class="signupform" method="post">
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
                       
@@ -93,27 +97,24 @@ if ($this->session->flashdata('msg')) {
                             }
                             ?>
                         </td>
-                        <form action="" method="post">
                         <td><input type="text" name="remark" id="remark" class="form-input form-control "
                                 placeholder="Add Remark Here">
                             </td>
                         <td>
-                            
-                        <div class="form-submit">
-                            <input type="submit" class="btn btn-success" value="Accept" class="submit" name="submit" id="submit" />
-                        </div>
-     
+                      
+                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary" value="Accept" />
+
 
                         </td>
-                        
+
                         <td>
-                        
-                        <div class="form-submit">
-                            <input type="submit" class="btn btn-danger" value="Decline" class="submit" name="submit" id="submit" />
-                        </div>
-                            </td>
-                       
-                            </form>
+                      
+                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary" value="Decline" />
+
+
+                        </td>
+   
+                        </form>
                     </tr>
 
 
