@@ -27,6 +27,7 @@ if ($this->session->flashdata('msg')) {
                         <th scope="col">ID</th>
                         <th scope="col">Name</th>
                         <th scope="col">Application</th>
+                        <th scope="col">From Department</th>
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
@@ -58,7 +59,26 @@ if ($this->session->flashdata('msg')) {
                             <a href="#" style="font-size: 12px; border-radius: 5px" class="btn btn-success"> View
                             </a>
                         </th>
-
+                        <td>
+                            <?php 
+                            if($application['from_dept']==1)
+                            {
+                            echo 'Computer Engineering';
+                            }else if($application['from_dept']==2)
+                            {
+                                echo 'Infromation Technology';
+                            }else if($application['from_dept']==3)
+                            {
+                                echo 'Mechanical Engineering';
+                            }else if($application['from_dept']==4)
+                            {
+                                echo 'Electronics and Telecomunication Engineering';
+                            }else if($application['from_dept']==5)
+                            {
+                                echo 'Civil Engineering';
+                            }
+                            ?>
+                        </td>
                         <td><?php echo $application['date'] ?></td>
                         <td>
                             <?php 
