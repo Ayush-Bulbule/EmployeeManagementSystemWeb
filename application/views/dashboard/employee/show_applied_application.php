@@ -32,8 +32,32 @@
                         <th scope="row"><?php echo $application['id'] ?></th>
                         <th scope="row"><?php echo $application['title'] ?></th>
                         <td><?php echo $application['date'] ?></td>
-                        <td><?php echo $application['status_id'] ?></td>
-                        <td><?php echo $application['remark'] ?></td>
+                        <td>
+                            <?php 
+                            if($application['status_id']==1)
+                            {
+                            echo 'APPLIED';
+                            }else if($application['status_id']==2)
+                            {
+                                echo 'APPROVED BY HOD';
+                            }else if($application['status_id']==3)
+                            {
+                                echo 'APPROVED BY REGISTRAR';
+                            }else if($application['status_id']==4)
+                            {
+                                echo 'APPROVED BY PRINCIPAL';
+                            }else if($application['status_id']==5)
+                            {
+                                echo 'Declined By Hod';
+                            }else if($application['status_id']==6)
+                            {
+                                echo 'Declined By Registrar';
+                            }else if($application['status_id']==7)
+                            {
+                                echo 'Declined By Principle';
+                            }
+                            ?>
+                        </td>                        <td><?php echo $application['remark'] ?></td>
                         <td><?php echo $application['description'] ?></td>
                     </tr>
 

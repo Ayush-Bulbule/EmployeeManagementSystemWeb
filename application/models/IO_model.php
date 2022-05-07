@@ -11,8 +11,10 @@ class IO_model extends CI_Model
             echo "sevarth_id is null at io_model line 11";
         }
         return $this->db->where('sevarth_id', $sevarth_id)->get('employees')->result()[0];
+   
     }
 
+ 
     public function save_io_details(
         $io_application_data
     ) {
@@ -88,6 +90,7 @@ class IO_model extends CI_Model
         }
     }
 
+  
     public function getApplicationsById($sevarthId, $role_id)
     {
         // if employee then directly return all matching sevarthId

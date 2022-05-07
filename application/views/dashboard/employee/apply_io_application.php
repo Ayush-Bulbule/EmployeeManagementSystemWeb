@@ -37,6 +37,7 @@ if ($this->session->flashdata('error')) {
 ?>
 
 
+
             <div class="signup-content">
 
                 <?php
@@ -44,6 +45,7 @@ if ($this->session->flashdata('error')) {
                     echo form_open_multipart('Auth/ApplyIoApplication/add_io_application');
                                     
                 ?>
+                <?php echo validation_errors(); ?>
 
                 <div class="signup-form">
                     <form method="POST" class="register-form" id="register-form">
