@@ -60,11 +60,15 @@ if ($this->session->flashdata('msg')) {
                         </th>
 
                         <td><?php echo $application['date'] ?></td>
+
                         <td>
                             <?php 
                             if($application['status_id']==1)
                             {
                             echo 'APPLIED';
+                            }else if($application['status_id']==2 && $application['remark'] == "APPLIED BY HOD")
+                            {
+                                echo "APPLIED BY HOD";
                             }else if($application['status_id']==2)
                             {
                                 echo 'APPROVED BY HOD';

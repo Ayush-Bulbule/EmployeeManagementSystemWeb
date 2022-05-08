@@ -68,6 +68,9 @@ if ($this->session->flashdata('msg')) {
                             }else if($application['status_id']==2)
                             {
                                 echo 'APPROVED BY HOD';
+                            }else if($application['status_id']==3 && $application['remark'] == "APPLIED BY REGISTRAR")
+                            {
+                                echo "APPLIED BY REGISTRAR";
                             }else if($application['status_id']==3)
                             {
                                 echo 'APPROVED BY REGISTRAR';

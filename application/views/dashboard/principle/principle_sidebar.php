@@ -24,6 +24,11 @@
                 <span class="ms-1 d-none d-sm-inline">IO Applications</span></a>
         </li>
         <li class="nav-item py-2">
+            <a href="<?php echo base_url() . 'Auth/ApplyIoApplication/add_principle_io_application' ?>"
+                class=" px-0 align-middle">
+                <span class="ms-1 d-none d-sm-inline">Apply Io Application</span></a>
+        </li>
+        <li class="nav-item py-2">
             <a href="#submenu2" data-bs-toggle="collapse" class=" px-0 align-middle ">
                 <span class="ms-1 d-none d-sm-inline">Bootstrap</span></a>
             <ul class="collapse nav flex-column ms-1" id="submenu2" data-bs-parent="#menu">
