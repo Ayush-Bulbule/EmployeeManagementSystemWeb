@@ -17,7 +17,11 @@
                 </li>
             </ul>
         </li>
-
+        <li class="nav-item py-2">
+            <a href="<?php echo base_url() . 'Auth/ApplyIoApplication/add_io_application' ?>"
+                class=" px-0 align-middle">
+                <span class="ms-1 d-none d-sm-inline">Apply Io Application</span></a>
+        </li>
         <li class="nav-item py-2">
             <a href="<?php echo base_url() . 'Hod/IoApplication/show_applied_io_applications' ?>"
                 class=" px-0 align-middle">
