@@ -2,15 +2,11 @@
     margin: 0;
     padding: 0;
 }
-
-/* Navbar */
 a{
-    text-decoration: none;
-    color: #fff;
+    text-decoration: none!important;
 }
-a:hover{
-    color: #fff;
-}
+/* Navbar */
+
 .logo-title{
     margin: 0;
     margin-left: 8px;

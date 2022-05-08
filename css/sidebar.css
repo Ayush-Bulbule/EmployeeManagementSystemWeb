@@ -3,13 +3,14 @@
     padding: 0;
     box-sizing: border-box;
 }
-a{
-    color: #fff!important;
-    text-decoration: none;
-}
+
 body {
     min-height: 100vh;
     background-color: #fff;
+}
+.light-menu{
+    color: #fff!important;
+    text-decoration: none;
 }
 
 .sidebar {

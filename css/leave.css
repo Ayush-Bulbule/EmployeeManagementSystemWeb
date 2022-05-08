@@ -183,8 +183,8 @@ body {
     color: black;
 }
 
-.leave-page .card-2 .card-body .table .profile {
-    display: flex;
+.leave-page .card-2 .card-body .table  {
+    /* display: flex; */
     align-items: center;
 }
 
@@ -201,6 +201,11 @@ body {
 
 .leave-page .rejected {
     color: red !important;
+}
+
+.profile-align{
+    width: 2rem;
+    height: 2rem;
 }
 
 @media(max-width: 650px) {
