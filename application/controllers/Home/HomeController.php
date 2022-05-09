@@ -10,11 +10,26 @@ class HomeController extends CI_Controller
     }
     public function index()
     {
+        $this->session->set_userdata('sevarth_id', '123456789015');   
+        $this->session->set_userdata('role_id', '1');   
         // echo "Hello";
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
-        $this->load->view('templates/sidebar.php');
-        $this->load->view('dashboard/principal_dashboard.php');
+        $this->load->view('dashboard/employee/employee_sidebar.php');
+        $this->load->view('dashboard/employee/employee_dashboard.php');
         $this->load->view('templates/footer.php');
     }
+
+    public function apply_io_application()
+    {
+        // echo "Hello";
+        $this->load->view('templates/header.php');
+        $this->load->view('templates/navbar.php');
+        $this->load->view('dashboard/employee/employee_sidebar.php');
+        $this->load->view('dashboard/employee/apply_io_application.php');
+        $this->load->view('templates/footer.php');
+
+    }
+
+    
 }
