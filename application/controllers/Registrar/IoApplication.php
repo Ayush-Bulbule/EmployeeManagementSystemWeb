@@ -54,7 +54,7 @@ class IoApplication extends CI_Controller
         $sevarth_id = $this->session->userdata('sevarth_id');
         $role_id = $this->session->userdata('role_id');
         
-        $applications = $this->IO_model->getApplicationsById("976789789987", "4");
+        $applications = $this->IO_model->getApplicationsById("123456789014", "4");
 
       
         $this->load->view('templates/header.php');

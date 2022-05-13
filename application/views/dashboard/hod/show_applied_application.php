@@ -16,6 +16,7 @@ if ($this->session->flashdata('msg')) {
         ';
 }
 ?>
+
         <!-- Task Card -->
         <div class=" shadow-sm card-task p-3">
             <h4>List of Employees</h4>
