@@ -93,35 +93,43 @@ class IO_model extends CI_Model
   
     public function getApplicationsById($sevarthId, $role_id)
     {
-        // if employee then directly return all matching sevarthId
+        // if employee then directly return all application applied by him
         if ($role_id == 1) {
             return $this->db->where('sevarth_id', $sevarthId)->order_by("id", "DESC")->get('applications')->result_array();
         }
-        // for hod 
+        // for hod show only application which are applied by employee
         else if ($role_id == 2) {
             $condition = array(
                 'hod_id' => $sevarthId,
-                'status_id' => 1, //show application which are applied by hod 
+                'status_id' => 1, //show application which are applied by employee 
             );
             return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
         }
-        // for principle
+        // for principle which are applied by registrar and approved by registrar
         else if ($role_id == 3) {
+
+            $condition_id = array(3, 10);
+
             $condition = array(
-                'principal_id' => $sevarthId,
-                'status_id' => 3, //show application which are approved by registrar
+                'principal_id' => $sevarthId,   
             );
 
-            return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
+            $this->db->where($condition);
+            $this->db->where_in('status_id', $condition_id); // applied by registrar
+            
+            return $this->db->order_by("id", "DESC")->get('applications')->result_array();
         }
         // for registrar
         else if ($role_id == 4) {
+            $condition_id = array(2, 8);
+            
             $condition = array(
                 'registrar_id' => $sevarthId,
-                'status_id' => 2, //show application which are approved by employee
             );
-
-            return $this->db->where($condition)->order_by("id", "DESC")->get('applications')->result_array();
+            
+            $this->db->where($condition);
+            $this->db->where_in('status_id', $condition_id); // applied by hod or approved by hod
+            return $this->db->order_by("id", "DESC")->get('applications')->result_array();
         }
 
     }
