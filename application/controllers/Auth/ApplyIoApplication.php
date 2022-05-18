@@ -69,7 +69,7 @@ class ApplyIOApplication extends CI_Controller
                     'hod_id' => $hod_id,
                     'registrar_id' => $registrar_id,
                     'principal_id' => $principal_id,
-                    'status_id' => "1",
+                    'status_id' => "1", // as employee is applying application so its id should be one
                     "application_type" => $application_type,
                 );
 
@@ -140,7 +140,7 @@ class ApplyIOApplication extends CI_Controller
                     'hod_id' => $hod_id,
                     'registrar_id' => $registrar_id,
                     'principal_id' => $principal_id,
-                    'status_id' => "2",
+                    'status_id' => "8", //As Hod is applying so status id should be 8
                     "application_type" => $application_type,
                 );
 
@@ -187,7 +187,7 @@ class ApplyIOApplication extends CI_Controller
                 $to_dept = $this->input->post('dept_id');
 
 
-                $current_emp_id = 123456789014;
+                $current_emp_id = 976789789987;
                 $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);
@@ -212,7 +212,7 @@ class ApplyIOApplication extends CI_Controller
                     'hod_id' => $hod_id,
                     'registrar_id' => $registrar_id,
                     'principal_id' => $principal_id,
-                    'status_id' => "3",
+                    'status_id' => "10", //As Registrar is applying so status id should be 10
                     "application_type" => $application_type,
                 );
 
@@ -284,7 +284,7 @@ class ApplyIOApplication extends CI_Controller
                     'hod_id' => $hod_id,
                     'registrar_id' => $registrar_id,
                     'principal_id' => $principal_id,
-                    'status_id' => "4",
+                    'status_id' => "9", // As Principal is applying so status id should be 9
                     "application_type" => $application_type,
                 );
 

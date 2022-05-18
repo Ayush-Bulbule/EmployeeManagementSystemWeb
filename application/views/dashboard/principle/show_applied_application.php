@@ -45,15 +45,16 @@ if ($this->session->flashdata('msg')) {
                     <tr>
 
                         <?php if (!empty($applications)) {foreach ($applications as $application) {?>
-                            <?php
+                        <?php
                     $attributes = array('role' => 'form');
                     echo form_open_multipart('Principle/IoApplication/ad_io_application/' . $application['id']);
                     ?>
-                 
-                            <form action="" name="registerForm" id="registerForm signupform" class="signupform" method="post">
+
+                        <form action="" name="registerForm" id="registerForm signupform" class="signupform"
+                            method="post">
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
-                      
+
                         <th scope="row"><?php echo $application['title'] ?></th>
 
                         <th scope="row">
@@ -107,6 +108,17 @@ if ($this->session->flashdata('msg')) {
                             }else if($application['status_id']==7)
                             {
                                 echo 'Declined By Principle';
+                            }else if($application['status_id']==8)
+                            {
+                                echo 'Applied By HOD';
+                            }
+                            else if($application['status_id']==9)
+                            {
+                                echo 'Applied By Principal';
+                            }
+                            else if($application['status_id']==10)
+                            {
+                                echo 'Applied By Registrar';
                             }
                             ?>
                         </td>
@@ -123,21 +135,23 @@ if ($this->session->flashdata('msg')) {
                         </td>
                         <td><input type="text" name="remark" id="remark" class="form-input form-control "
                                 placeholder="Add Remark Here">
-                            </td>
+                        </td>
                         <td>
-                      
-                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary" value="Accept" />
+
+                            <input type="submit" name="submit" id="submit" class="form-submit btn btn-primary"
+                                value="Accept" />
 
 
                         </td>
 
                         <td>
-                      
-                        <input type="submit" name="submit" id="submit" class="form-submit btn btn-danger" value="Decline" />
+
+                            <input type="submit" name="submit" id="submit" class="form-submit btn btn-danger"
+                                value="Decline" />
 
 
                         </td>
-   
+
                         </form>
                     </tr>
 
@@ -154,5 +168,3 @@ if ($this->session->flashdata('msg')) {
 
 
 </section>
-
-
