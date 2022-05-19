@@ -44,7 +44,7 @@ class ApplyIOApplication extends CI_Controller
                 $to_dept = $this->input->post('dept_id');
 
 
-                $current_emp_id = $this->session->userdata('sevarth_id');
+                $current_emp_id = 123456789015;
                 $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);
@@ -55,7 +55,7 @@ class ApplyIOApplication extends CI_Controller
                 $application_type = $this->input->post('application_type');
                 $date = $this->input->post('date');
 
-                $emp_data = $this->IO_model->get_employee_by_sevarth_id($this->session->userdata('sevarth_id'));
+                $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $from_dept = $emp_data->dept_id;
                 $io_application_data = array(
                     'sevarth_id' => $current_emp_id,
@@ -187,7 +187,7 @@ class ApplyIOApplication extends CI_Controller
                 $to_dept = $this->input->post('dept_id');
 
 
-                $current_emp_id = 976789789987;
+                $current_emp_id = 123456789014;
                 $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);

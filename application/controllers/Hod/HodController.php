@@ -27,5 +27,6 @@ class HodController extends CI_Controller
         $this->load->view('templates/footer.php');
     }
 
+
     
 }

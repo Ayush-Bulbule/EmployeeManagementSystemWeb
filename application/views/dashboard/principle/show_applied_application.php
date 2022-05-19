@@ -65,19 +65,19 @@ if ($this->session->flashdata('msg')) {
                             <?php 
                             if($application['from_dept']==1)
                             {
-                            echo 'Computer Engineering';
+                            echo 'CS';
                             }else if($application['from_dept']==2)
                             {
-                                echo 'Infromation Technology';
+                                echo 'IT';
                             }else if($application['from_dept']==3)
                             {
-                                echo 'Mechanical Engineering';
+                                echo 'MT';
                             }else if($application['from_dept']==4)
                             {
-                                echo 'Electronics and Telecomunication Engineering';
+                                echo 'EXTC';
                             }else if($application['from_dept']==5)
                             {
-                                echo 'Civil Engineering';
+                                echo 'CE';
                             }
                             ?>
                         </td>
@@ -90,9 +90,6 @@ if ($this->session->flashdata('msg')) {
                             }else if($application['status_id']==2)
                             {
                                 echo 'APPROVED BY HOD';
-                            }else if($application['status_id']==3 && $application['remark'] == "APPLIED BY REGISTRAR")
-                            {
-                                echo "APPLIED BY REGISTRAR";
                             }else if($application['status_id']==3)
                             {
                                 echo 'APPROVED BY REGISTRAR';

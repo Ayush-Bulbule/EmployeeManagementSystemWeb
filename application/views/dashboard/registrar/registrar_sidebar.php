@@ -24,6 +24,11 @@
                 <span class="ms-1 d-none d-sm-inline">IO Applications</span></a>
         </li>
         <li class="nav-item py-2">
+            <a href="<?php echo base_url() . 'Registrar/IoApplication/show_report_io_applications'?>"
+                class=" px-0 align-middle">
+                <span class="ms-1 d-none d-sm-inline">Report IO Applications</span></a>
+        </li>
+        <li class="nav-item py-2">
             <a href="<?php echo base_url() . 'Auth/ApplyIoApplication/add_registrar_io_application' ?>"
                 class=" px-0 align-middle">
                 <span class="ms-1 d-none d-sm-inline">Apply Io Application</span></a>
