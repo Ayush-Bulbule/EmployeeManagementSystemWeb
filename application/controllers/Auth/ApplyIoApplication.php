@@ -16,8 +16,9 @@ class ApplyIOApplication extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'Description', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('applicant_name', 'Applicant Name', 'required');
+
 
         //if error in form validation reload apply io application screen again
         if ($this->form_validation->run() == false) {
@@ -44,7 +45,7 @@ class ApplyIOApplication extends CI_Controller
                 $to_dept = $this->input->post('dept_id');
 
 
-                $current_emp_id = $this->session->userdata('sevarth_id');
+                $current_emp_id = 123456789015;
                 $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);
@@ -54,15 +55,18 @@ class ApplyIOApplication extends CI_Controller
                 $description = $this->input->post('description');
                 $application_type = $this->input->post('application_type');
                 $date = $this->input->post('date');
+                $applicant_name = $this->input->post('applicant_name');
+                $newDate = date("Y-m-d");
 
-                $emp_data = $this->IO_model->get_employee_by_sevarth_id($this->session->userdata('sevarth_id'));
+
+                $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $from_dept = $emp_data->dept_id;
                 $io_application_data = array(
                     'sevarth_id' => $current_emp_id,
                     'title' => $title,
                     'description' => $description,
                     'remark' => "Applied Application",
-                    'date' => $date,
+                    'date' => $newDate,
                     'to_dept' => $to_dept,
                     'from_dept' => $from_dept,
                     'application' => $fileName,
@@ -71,6 +75,8 @@ class ApplyIOApplication extends CI_Controller
                     'principal_id' => $principal_id,
                     'status_id' => "1", // as employee is applying application so its id should be one
                     "application_type" => $application_type,
+                    "applicant_name" => $applicant_name
+
                 );
 
                 $this->IO_model->save_io_details($io_application_data);
@@ -87,8 +93,8 @@ class ApplyIOApplication extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'Description', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('applicant_name', 'Applicant Name', 'required');
 
         //if error in form validation reload apply io application screen again
         if ($this->form_validation->run() == false) {
@@ -125,6 +131,9 @@ class ApplyIOApplication extends CI_Controller
                 $description = $this->input->post('description');
                 $application_type = $this->input->post('application_type');
                 $date = $this->input->post('date');
+                $applicant_name = $this->input->post('applicant_name');
+
+                $newDate = date("Y-m-d");
 
                 $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $from_dept = $emp_data->dept_id;
@@ -142,6 +151,8 @@ class ApplyIOApplication extends CI_Controller
                     'principal_id' => $principal_id,
                     'status_id' => "8", //As Hod is applying so status id should be 8
                     "application_type" => $application_type,
+                    "applicant_name" => $applicant_name
+
                 );
 
                 $this->IO_model->save_io_details($io_application_data);
@@ -159,8 +170,8 @@ class ApplyIOApplication extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'Description', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('applicant_name', 'Applicant Name', 'required');
 
         //if error in form validation reload apply io application screen again
         if ($this->form_validation->run() == false) {
@@ -187,7 +198,7 @@ class ApplyIOApplication extends CI_Controller
                 $to_dept = $this->input->post('dept_id');
 
 
-                $current_emp_id = 976789789987;
+                $current_emp_id = 123456789014;
                 $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
                 $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);
@@ -197,6 +208,9 @@ class ApplyIOApplication extends CI_Controller
                 $description = $this->input->post('description');
                 $application_type = $this->input->post('application_type');
                 $date = $this->input->post('date');
+                $applicant_name = $this->input->post('applicant_name');
+                $newDate = date("Y-m-d");
+
 
                 $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $from_dept = $emp_data->dept_id;
@@ -214,6 +228,83 @@ class ApplyIOApplication extends CI_Controller
                     'principal_id' => $principal_id,
                     'status_id' => "10", //As Registrar is applying so status id should be 10
                     "application_type" => $application_type,
+                    "applicant_name" => $applicant_name
+
+                );
+
+                $this->IO_model->save_io_details($io_application_data);
+                $this->session->set_flashdata('success', "Application Submitted Successfully");
+                redirect(base_url() . 'registrar'); // redirect to home page
+
+            }
+        }
+
+    }
+
+
+    public function add_io_entry()
+    {
+
+        $this->form_validation->set_rules('title', 'Title', 'required');
+        $this->form_validation->set_rules('description', 'Description', 'required');
+        $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('applicant_name', 'Applicant Name', 'required');
+
+        //if error in form validation reload apply io application screen again
+        if ($this->form_validation->run() == false) {
+            $this->load_add_io_entry_application();
+        } else {
+
+            $config = array(
+                'upload_path' => "uploads/io_applications", //path for upload
+                'allowed_types' => "*", //restrict extension
+                'max_size' => '300000',
+                'max_width' => '30000',
+                'max_height' => '30000'
+            );
+            $this->load->library('upload', $config);
+
+            if (!$this->upload->do_upload('application')) {
+                $error = $this->upload->display_errors();
+                $this->session->set_flashdata('error', $error);
+                $this->load_registrar_apply_io_application();
+
+            } else {
+
+                $fileName = $this->upload->data('file_name');
+                $to_dept = $this->input->post('dept_id');
+
+
+                $current_emp_id = 123456789014;
+                $curr_user = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
+                $hod_id = $this->IO_model->get_hod_by_department_organization($to_dept, $curr_user->org_id);
+                $principal_id = $this->IO_model->get_principal_by_organization($to_dept, $curr_user->org_id);
+                $registrar_id = $this->IO_model->get_registrar_by_organization($to_dept, $curr_user->org_id);
+
+                $title = $this->input->post('title');
+                $applicant_name = $this->input->post('applicant_name');
+                $description = $this->input->post('description');
+                $application_type = $this->input->post('application_type');
+                $date = $this->input->post('date');
+                $newDate = date("Y-m-d");
+
+                $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
+                $from_dept = $emp_data->dept_id;
+                $io_application_data = array(
+                    'sevarth_id' => $current_emp_id,
+                    'title' => $title,
+                    'description' => $description,
+                    'remark' => "APPLIED BY REGISTRAR",
+                    'date' => $date,
+                    'to_dept' => $to_dept,
+                    'from_dept' => $from_dept,
+                    'application' => $fileName,
+                    'hod_id' => $hod_id,
+                    'registrar_id' => $registrar_id,
+                    'principal_id' => $principal_id,
+                    'status_id' => "10", //As Registrar is applying so status id should be 10
+                    "application_type" => $application_type,
+                    "applicant_name" => $applicant_name
                 );
 
                 $this->IO_model->save_io_details($io_application_data);
@@ -231,8 +322,8 @@ class ApplyIOApplication extends CI_Controller
 
         $this->form_validation->set_rules('title', 'Title', 'required');
         $this->form_validation->set_rules('description', 'Description', 'required');
-        $this->form_validation->set_rules('date', 'Date', 'required');
         $this->form_validation->set_rules('dept_id', 'Date', 'required');
+        $this->form_validation->set_rules('applicant_name', 'Applicant Name', 'required');
 
         //if error in form validation reload apply io application screen again
         if ($this->form_validation->run() == false) {
@@ -269,6 +360,9 @@ class ApplyIOApplication extends CI_Controller
                 $description = $this->input->post('description');
                 $application_type = $this->input->post('application_type');
                 $date = $this->input->post('date');
+                $applicant_name = $this->input->post('applicant_name');
+                $newDate = date("Y-m-d");
+
 
                 $emp_data = $this->IO_model->get_employee_by_sevarth_id($current_emp_id);
                 $from_dept = $emp_data->dept_id;
@@ -286,6 +380,8 @@ class ApplyIOApplication extends CI_Controller
                     'principal_id' => $principal_id,
                     'status_id' => "9", // As Principal is applying so status id should be 9
                     "application_type" => $application_type,
+                    "applicant_name" => $applicant_name
+
                 );
 
                 $this->IO_model->save_io_details($io_application_data);
@@ -307,6 +403,20 @@ class ApplyIOApplication extends CI_Controller
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/employee/employee_sidebar.php');
         $this->load->view('dashboard/employee/apply_io_application.php', array('dept' => $dept));
+        $this->load->view('templates/footer.php');
+
+
+    }
+
+    public function load_add_io_entry_application()
+    {
+
+        $dept = $this->IO_model->getDepartment();
+
+        $this->load->view('templates/header.php');
+        $this->load->view('templates/navbar.php');
+        $this->load->view('dashboard/employee/employee_sidebar.php');
+        $this->load->view('dashboard/employee/add_io_entry.php', array('dept' => $dept));
         $this->load->view('templates/footer.php');
 
 

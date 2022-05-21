@@ -14,6 +14,22 @@ class IO_model extends CI_Model
    
     }
 
+    public function get_applied_applications($sevarth_id, $date){
+        if($date == "-1"){
+            return $this->db->where('hod_id', $sevarth_id)->get('applications')->result_array();
+        }else{
+            $condition = array(
+                'hod_id' => $sevarth_id,
+                'date' => $date
+            );
+
+            return $this->db->where($condition)->get('applications')->result_array();
+        }
+    }
+
+        public function get_application_date(){
+            return $this->db->get('date')->result_array();
+        }
  
     public function save_io_details(
         $io_application_data
@@ -132,7 +148,61 @@ class IO_model extends CI_Model
             return $this->db->order_by("id", "DESC")->get('applications')->result_array();
         }
 
+        
+
     }
+
+    public function getApplicationsByDate($sevarthId, $date, $type)
+    {
+
+            $condition_id = array(2, 8,4);
+            
+            $condition = array(
+                'registrar_id' => $sevarthId,
+                'date' => $date,
+                'application_type' => $type
+            );
+            
+            $this->db->where($condition);
+            $this->db->where_in('status_id', $condition_id); // applied by hod or approved by hod
+            return $this->db->order_by("id", "DESC")->get('applications')->result_array();
+        
+
+    }
+
+    public function getEmployeeById($sevarthId)
+    {
+
+            
+            $condition = array(
+                'sevarth_id' => $sevarthId,
+              
+            );
+            
+            $this->db->where($condition);
+            return $this->db->get('employees')->result_array();
+        
+
+    }
+
+    public function getRowsByDate($sevarthId, $date, $type)
+    {
+
+            $condition_id = array(2, 8,4);
+            
+            $condition = array(
+                'registrar_id' => $sevarthId,
+                'date' => $date,
+                'application_type' => $type
+            );
+            
+            $this->db->where($condition);
+            $this->db->where_in('status_id', $condition_id); // applied by hod or approved by hod
+            return $this->db->get('applications')->num_rows();
+        
+
+    }
+
 
     public function update_status_id($application_id, $status_id, $remark)
     {

@@ -15,6 +15,15 @@ if ($this->session->flashdata('msg')) {
         </div>
         ';
 }
+if ($this->session->flashdata('msgSuccess')) {
+    echo '
+        <div class="container">
+            <div class="alert alert-success">
+                ' . $this->session->flashdata("msgSuccess") . '
+            </div>
+        </div>
+        ';
+}
 ?>
         <!-- Task Card -->
         <div class=" shadow-sm card-task p-3">
@@ -25,8 +34,10 @@ if ($this->session->flashdata('msg')) {
                     <tr>
 
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
-                        <th scope="col">Application</th>
+                        <th scope="col">Applicant Name</th>
+                        <th scope="col">Subject</th>
+                        <th scope="col">Department</th>
+
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
@@ -52,6 +63,7 @@ if ($this->session->flashdata('msg')) {
                             method="post">
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
+                        <th scope="row"><?php echo $application['applicant_name'] ?></th>
 
                         <th scope="row"><?php echo $application['title'] ?></th>
 
@@ -59,7 +71,26 @@ if ($this->session->flashdata('msg')) {
                             <a href="#" style="font-size: 12px; border-radius: 5px" class="btn btn-success"> View
                             </a>
                         </th>
-
+                        <td>
+                            <?php 
+                            if($application['from_dept']==1)
+                            {
+                            echo 'CS';
+                            }else if($application['from_dept']==2)
+                            {
+                                echo 'IT';
+                            }else if($application['from_dept']==3)
+                            {
+                                echo 'MT';
+                            }else if($application['from_dept']==4)
+                            {
+                                echo 'EXTC';
+                            }else if($application['from_dept']==5)
+                            {
+                                echo 'CE';
+                            }
+                            ?>
+                        </td>
                         <td><?php echo $application['date'] ?></td>
                         <td>
                             <?php 
@@ -69,9 +100,6 @@ if ($this->session->flashdata('msg')) {
                             }else if($application['status_id']==2)
                             {
                                 echo 'APPROVED BY HOD';
-                            }else if($application['status_id']==3 && $application['remark'] == "APPLIED BY REGISTRAR")
-                            {
-                                echo "APPLIED BY REGISTRAR";
                             }else if($application['status_id']==3)
                             {
                                 echo 'APPROVED BY REGISTRAR';

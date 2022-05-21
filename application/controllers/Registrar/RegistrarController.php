@@ -17,5 +17,27 @@ class RegistrarController extends CI_Controller
         $this->load->view('templates/footer.php');
     }
 
+    // public function show_report_applications(){
+    //     $sevarth_id = $this->session->userdata('user_id');
+        
+    //     $date = $this->input->post('date');
+    //     print_r($date);
+
+    //     if($date == null){
+    //         echo "null";
+    //     }
+    //     else{
+    //         $applications = $this->IO_model->getApplicationsByDate("123456789014", $date);
+
+    //         print_r($applications);
+    
+    //         $this->load->view('templates/header.php');
+    //         $this->load->view('templates/navbar.php');
+    //         $this->load->view('dashboard/hod/hod_sidebar.php');
+    //         $this->load->view("dashboard/hod/show_report_application.php", array('application' => $applications));
+    
+    //     }
+     
+    // }
     
 }

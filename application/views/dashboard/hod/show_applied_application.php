@@ -15,7 +15,17 @@ if ($this->session->flashdata('msg')) {
         </div>
         ';
 }
+if ($this->session->flashdata('msgSuccess')) {
+    echo '
+        <div class="container">
+            <div class="alert alert-success">
+                ' . $this->session->flashdata("msgSuccess") . '
+            </div>
+        </div>
+        ';
+}
 ?>
+
         <!-- Task Card -->
         <div class=" shadow-sm card-task p-3">
             <h4>List of Employees</h4>
@@ -25,7 +35,9 @@ if ($this->session->flashdata('msg')) {
                     <tr>
 
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Applicant Name</th>
+                        <th scope="col">Subject</th>
+
                         <th scope="col">Application</th>
                         <th scope="col">From Department</th>
                         <th scope="col">Date</th>
@@ -53,6 +65,7 @@ if ($this->session->flashdata('msg')) {
                             method="post">
                     <tr>
                         <th scope="row"><?php echo $application['id'] ?></th>
+                        <th scope="row"><?php echo $application['applicant_name'] ?></th>
 
                         <th scope="row"><?php echo $application['title'] ?></th>
 
@@ -67,7 +80,7 @@ if ($this->session->flashdata('msg')) {
                             echo 'Computer Engineering';
                             }else if($application['from_dept']==2)
                             {
-                                echo 'Infromation Technology';
+                                echo 'Information Technology';
                             }else if($application['from_dept']==3)
                             {
                                 echo 'Mechanical Engineering';
