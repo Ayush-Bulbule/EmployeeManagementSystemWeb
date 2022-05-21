@@ -17,7 +17,7 @@ if ($this->session->flashdata('msg')) {
 }
 ?>
         <div class="container container_new ">
-
+    
 <form action="<?php echo base_url() . 'Registrar/IoApplication/show_report_io_applications' ?>" name="mainForm"
     id="mainForm signupform" class="signupform" method="post">
     <div class="form-row  d-flex align-items-center ms-auto align-item-space-between">
@@ -67,7 +67,6 @@ if ($this->session->flashdata('msg')) {
 </div>
 </div>
 </form>
-
 </div>
 
         <div class="container container_new ">
@@ -135,10 +134,10 @@ if ($this->session->flashdata('msg')) {
                 <thead>
                     <tr>
                         <th scope="col">ID</th>
-                        <th scope="col">Name</th>
+                        <th scope="col">Applicant Name</th>
+                        <th scope="col">Application Name</th>
                         <th scope="col">Application</th>
                         <th scope="col">Department</th>
-
                         <th scope="col">Date</th>
                         <th scope="col">Status</th>
                         <th scope="col">Type</th>
@@ -157,7 +156,7 @@ if ($this->session->flashdata('msg')) {
                         <?php if (!empty($applications)) {foreach ($applications as $application) {?>
                             <?php
                     $attributes = array('role' => 'form');
-                    echo form_open_multipart('Registrar/IoApplication/ad_io_application/' . $application['id']);
+                    echo form_open_multipart('Registrar/IoApplication/ad_io_application/' );
                     ?>
                  
                             <form action="" name="registerForm" id="registerForm signupform" class="signupform" method="post">
@@ -165,6 +164,8 @@ if ($this->session->flashdata('msg')) {
                        
 
                         <th scope="row"><?php echo $application['id'] ?></th>
+                    
+                            <th scope="row"><?php echo $application['applicant_name'] ?></th>
                       
                         <th scope="row"><?php echo $application['title'] ?></th>
 

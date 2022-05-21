@@ -34,6 +34,15 @@ if ($this->session->flashdata('error')) {
         </div>
         ';
 }
+if ($this->session->flashdata('success')) {
+    echo '
+        <div class="container">
+            <div class="alert alert-danger">
+                ' . $this->session->flashdata("success") . '
+            </div>
+        </div>
+        ';
+}
 ?>
 
 
@@ -51,9 +60,20 @@ if ($this->session->flashdata('error')) {
                     <form method="POST" class="register-form" id="register-form">
 
                         <h2>Apply For Application</h2>
+                  
                         <div class="form-row">
                             <div class="form-group">
-                                <label for="title">Title</label>
+                                <label for="applicant_name">Applicant Name</label>
+                                <input type="text" name="applicant_name" value="<?php echo set_value('applicant_name') ?>" id=" applicant_name"
+                                    class="<?php echo (form_error('applicant_name') != "") ? 'is-invalid' : '' ?>" />
+                                <p class="invalid-feedback "><?php echo strip_tags(form_error('applicant_name')); ?></p>
+
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="title">Subject</label>
                                 <input type="text" name="title" value="<?php echo set_value('title') ?>" id=" title"
                                     class="<?php echo (form_error('title') != "") ? 'is-invalid' : '' ?>" />
                                 <p class="invalid-feedback "><?php echo strip_tags(form_error('title')); ?></p>
@@ -89,9 +109,8 @@ if ($this->session->flashdata('error')) {
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="org_id">Date</label>
-                                <input type="date" name="date" id="date" value="<?php echo set_value('date'); ?>"
-                                    class="form-input form-control <?php echo (form_error('date') != "") ? 'is-invalid' : '' ?>"
-                                    placeholder="date">
+                             <input type='text' name='date' id='date' class='form-input form-control'  value="<?php echo date('d/m/y') ?>" disabled />
+
                                 <p class="invalid-feedback "><?php echo strip_tags(form_error('date')); ?></p>
 
 

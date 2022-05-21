@@ -30,6 +30,8 @@ class IoApplication extends CI_Controller
         }else{
             //Principle is accepting the application hence status is become 4
             $this->IO_model->update_status_id($application_id, 4, $remark);
+            $this->session->set_flashdata('msgSuccess', 'Accepted Successfully!!');
+
             redirect('Principle/IoApplication/show_applied_io_applications');
 
         }
@@ -47,6 +49,8 @@ class IoApplication extends CI_Controller
         }else{
             //Principle is accepting the application hence status is become 6
             $this->IO_model->update_status_id($application_id, 7, $remark);
+            $this->session->set_flashdata('msg', 'Declined Successfully!!');
+
             redirect('Principle/IoApplication/show_applied_io_applications');
         }
     }

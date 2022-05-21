@@ -32,6 +32,8 @@ class IoApplication extends CI_Controller
         }else{
             //Principle is accepting the application hence status is become 4
             $this->IO_model->update_status_id($application_id, 3,$remark);
+            $this->session->set_flashdata('msgSuccess', 'Accepted Successfully!!');
+
             redirect('Registrar/IoApplication/show_applied_io_applications');
         }    
     }
@@ -48,6 +50,8 @@ class IoApplication extends CI_Controller
         }else{
         //Principle is accepting the application hence status is become 6
         $this->IO_model->update_status_id($application_id, 6, $remark);
+        $this->session->set_flashdata('msg', 'Declined Successfully!!');
+
         redirect('Registrar/IoApplication/show_applied_io_applications');
         }
     }
@@ -69,18 +73,23 @@ class IoApplication extends CI_Controller
 
     
     public function show_report_io_applications(){
-        $sevarth_id = $this->session->userdata('sevarth_id');
+        // $sevarth_id = $this->session->userdata('sevarth_id');
+
+        $datas =array();
         $date = $this->input->post('date');
         $type = $this->input->post('application_type');
         $applications = $this->IO_model->getApplicationsByDate("123456789014", $date, $type);
+  
 
+
+
+
+        
         $getRow = $this->IO_model->getRowsByDate("123456789014", $date, $type);
-        print_r($getRow);
-
         $this->load->view('templates/header.php');
         $this->load->view('templates/navbar.php');
         $this->load->view('dashboard/registrar/registrar_sidebar.php');
-        $this->load->view('dashboard/registrar/show_report_application.php', array('applications' => $applications ) );
+        $this->load->view('dashboard/registrar/show_report_application.php', array('applications' => $applications) );
         $this->load->view('templates/footer.php');
 
     }

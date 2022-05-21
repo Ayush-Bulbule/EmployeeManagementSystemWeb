@@ -170,6 +170,21 @@ class IO_model extends CI_Model
 
     }
 
+    public function getEmployeeById($sevarthId)
+    {
+
+            
+            $condition = array(
+                'sevarth_id' => $sevarthId,
+              
+            );
+            
+            $this->db->where($condition);
+            return $this->db->get('employees')->result_array();
+        
+
+    }
+
     public function getRowsByDate($sevarthId, $date, $type)
     {
 

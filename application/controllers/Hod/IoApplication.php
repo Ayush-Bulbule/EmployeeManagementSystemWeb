@@ -34,6 +34,8 @@ class IoApplication extends CI_Controller
             //hod is accepting the application hence status is become 2
             // echo $remark;
             $this->IO_model->update_status_id($application_id, 2, $remark);
+            $this->session->set_flashdata('msgSuccess', 'Accepted Successfully!!');
+
             redirect('Hod/IoApplication/show_applied_io_applications');
         }
 
@@ -50,6 +52,8 @@ class IoApplication extends CI_Controller
         }else{
             //hod is accepting the application hence status is become 2
             $this->IO_model->update_status_id($application_id, 5, $remark);
+            $this->session->set_flashdata('msg', 'Declined Successfully!!');
+
             redirect('Hod/IoApplication/show_applied_io_applications');
         }
 
